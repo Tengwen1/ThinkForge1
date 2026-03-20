@@ -1,0 +1,3606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="ThinkForge — Think better. Think smarter. Build software, hardware, AI, and future startup systems."
+  />
+  <meta
+    name="keywords"
+    content="ThinkForge, startup, software, hardware, AI chips, founders, builders, thinkers"
+  />
+  <meta name="author" content="Tengwen" />
+  <title>ThinkForge | Founder Mode</title>
+
+  <style>
+    :root {
+      --bg-0: #040913;
+      --bg-1: #07101d;
+      --bg-2: #0a1630;
+      --bg-3: #0d1d3d;
+      --panel-1: rgba(255, 255, 255, 0.04);
+      --panel-2: rgba(255, 255, 255, 0.06);
+      --panel-3: rgba(255, 255, 255, 0.08);
+      --panel-4: rgba(255, 255, 255, 0.1);
+      --border-1: rgba(255, 255, 255, 0.08);
+      --border-2: rgba(255, 255, 255, 0.12);
+      --border-3: rgba(255, 255, 255, 0.18);
+
+      --text-1: #f3f7ff;
+      --text-2: #dbe8ff;
+      --text-3: #aebdd8;
+      --text-4: #8b9ab6;
+
+      --blue-1: #4b8cff;
+      --blue-2: #79a8ff;
+      --green-1: #30d17f;
+      --green-2: #73efae;
+      --orange-1: #ff9d39;
+      --orange-2: #ffc36c;
+      --purple-1: #916cff;
+      --purple-2: #b59bff;
+      --red-1: #ff617d;
+      --red-2: #ff92a5;
+      --cyan-1: #43d5ff;
+      --cyan-2: #88ebff;
+
+      --shadow-1: 0 12px 30px rgba(0, 0, 0, 0.22);
+      --shadow-2: 0 20px 60px rgba(0, 0, 0, 0.28);
+      --shadow-3: 0 28px 90px rgba(0, 0, 0, 0.38);
+
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
+      --radius-xl: 30px;
+      --radius-pill: 999px;
+
+      --max-width: 1360px;
+      --nav-height: 78px;
+      --transition-fast: 0.15s ease;
+      --transition-med: 0.22s ease;
+      --transition-slow: 0.35s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text-1);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(75, 140, 255, 0.18), transparent 18%),
+        radial-gradient(circle at 92% 16%, rgba(145, 108, 255, 0.16), transparent 20%),
+        radial-gradient(circle at 46% 86%, rgba(48, 209, 127, 0.12), transparent 22%),
+        linear-gradient(180deg, var(--bg-0), var(--bg-1), var(--bg-2));
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .muted {
+      color: var(--text-3);
+    }
+
+    .micro {
+      font-size: 12px;
+      color: var(--text-4);
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .glass {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0.04)
+      );
+      border: 1px solid var(--border-2);
+      box-shadow: var(--shadow-2);
+      backdrop-filter: blur(18px);
+    }
+
+    .panel {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.07),
+        rgba(255, 255, 255, 0.04)
+      );
+      border: 1px solid var(--border-2);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-2);
+    }
+
+    .section-shell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      pointer-events: none;
+      opacity: 0.24;
+      background-image:
+        radial-gradient(circle at 12% 18%, #ffffff 0 1px, transparent 1.6px),
+        radial-gradient(circle at 74% 32%, #ffffff 0 1px, transparent 1.6px),
+        radial-gradient(circle at 38% 72%, #ffffff 0 1px, transparent 1.7px),
+        radial-gradient(circle at 88% 82%, #ffffff 0 1px, transparent 1.8px),
+        radial-gradient(circle at 62% 14%, #ffffff 0 1px, transparent 1.7px),
+        radial-gradient(circle at 18% 84%, #ffffff 0 1px, transparent 1.8px);
+      background-size:
+        280px 280px,
+        360px 360px,
+        320px 320px,
+        420px 420px,
+        340px 340px,
+        300px 300px;
+    }
+
+    .orb {
+      position: fixed;
+      z-index: -2;
+      border-radius: 999px;
+      filter: blur(70px);
+      opacity: 0.22;
+      pointer-events: none;
+      animation: floatOrb 20s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 360px;
+      height: 360px;
+      background: var(--blue-1);
+      top: -80px;
+      left: -80px;
+    }
+
+    .orb-2 {
+      width: 420px;
+      height: 420px;
+      background: var(--purple-1);
+      top: 160px;
+      right: -120px;
+      animation-delay: -5s;
+    }
+
+    .orb-3 {
+      width: 320px;
+      height: 320px;
+      background: var(--green-1);
+      bottom: -80px;
+      left: 28%;
+      animation-delay: -9s;
+    }
+
+    .orb-4 {
+      width: 260px;
+      height: 260px;
+      background: var(--cyan-1);
+      top: 52%;
+      left: -90px;
+      animation-delay: -12s;
+    }
+
+    @keyframes floatOrb {
+      0%, 100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-22px) translateX(14px) scale(1.04);
+      }
+    }
+
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -4;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(circle at center, black 0%, rgba(0,0,0,0.65) 45%, transparent 80%);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(4, 9, 19, 0.68);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      min-height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(75, 140, 255, 0.26), rgba(48, 209, 127, 0.14)),
+        rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-2);
+      box-shadow: var(--shadow-2);
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      width: 10px;
+      height: 10px;
+      background: var(--orange-1);
+      clip-path: polygon(
+        50% 0%,
+        60% 35%,
+        100% 35%,
+        68% 56%,
+        80% 100%,
+        50% 72%,
+        20% 100%,
+        32% 56%,
+        0% 35%,
+        40% 35%
+      );
+    }
+
+    .brand-copy {
+      min-width: 0;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--text-3);
+      font-size: 12px;
+      margin-top: 4px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--text-3);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition:
+        transform var(--transition-fast),
+        opacity var(--transition-fast),
+        box-shadow var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-sm {
+      padding: 10px 14px;
+      font-size: 14px;
+      border-radius: 12px;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-1);
+      border: 1px solid var(--border-2);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
+    }
+
+    .btn-green {
+      color: white;
+      background: linear-gradient(135deg, var(--green-1), var(--green-2));
+    }
+
+    .btn-orange {
+      color: white;
+      background: linear-gradient(135deg, var(--orange-1), var(--orange-2));
+    }
+
+    .btn-purple {
+      color: white;
+      background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
+    }
+
+    .btn-red {
+      color: white;
+      background: linear-gradient(135deg, var(--red-1), var(--red-2));
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      padding: 74px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .eyebrow-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border-radius: var(--radius-pill);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-2);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--green-1);
+      box-shadow: 0 0 14px var(--green-1);
+    }
+
+    .hero-kicker {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #90b3ff;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-size: clamp(44px, 8vw, 92px);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 760px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #cfe1ff 30%,
+        #8cdfff 65%,
+        #98f7ce 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      margin: 22px 0 28px;
+      max-width: 760px;
+      color: var(--text-3);
+      font-size: 19px;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .hero-badges {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .hero-badge {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-2);
+      box-shadow: var(--shadow-1);
+    }
+
+    .hero-badge strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-badge span {
+      color: var(--text-3);
+      font-size: 14px;
+      line-height: 1.45;
+      display: block;
+    }
+
+    .hero-stack {
+      position: relative;
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 22px;
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04)),
+        rgba(255,255,255,0.02);
+      border: 1px solid var(--border-2);
+      box-shadow: var(--shadow-3);
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 0 35%,
+        rgba(255,255,255,0.09) 35% 42%,
+        transparent 42% 100%
+      );
+      pointer-events: none;
+    }
+
+    .terminal-header {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .terminal-header span {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: block;
+    }
+
+    .terminal-header span:nth-child(1) {
+      background: #ff6d7b;
+    }
+
+    .terminal-header span:nth-child(2) {
+      background: #ffcb57;
+    }
+
+    .terminal-header span:nth-child(3) {
+      background: #4fe28e;
+    }
+
+    .hero-panel-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 14px;
+    }
+
+    .surface {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.10);
+      min-height: 100%;
+    }
+
+    .surface-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-3);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .code-view {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 13px;
+      color: #dbe7ff;
+      line-height: 1.75;
+      white-space: pre-wrap;
+    }
+
+    .chip-stage {
+      min-height: 280px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .chip-ring {
+      position: absolute;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      animation: pulseRing 3.2s ease-out infinite;
+    }
+
+    .chip-ring.r1 {
+      width: 180px;
+      height: 180px;
+    }
+
+    .chip-ring.r2 {
+      width: 240px;
+      height: 240px;
+      animation-delay: 0.8s;
+    }
+
+    .chip-ring.r3 {
+      width: 300px;
+      height: 300px;
+      animation-delay: 1.6s;
+    }
+
+    @keyframes pulseRing {
+      0% {
+        transform: scale(0.88);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1.08);
+        opacity: 0;
+      }
+    }
+
+    .chip-core {
+      width: 160px;
+      height: 160px;
+      border-radius: 24px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 34px;
+      letter-spacing: 0.08em;
+      background:
+        linear-gradient(135deg, rgba(75,140,255,0.96), rgba(145,108,255,0.84)),
+        #152241;
+      border: 1px solid rgba(255,255,255,0.26);
+      box-shadow: 0 24px 60px rgba(75,140,255,0.35);
+    }
+
+    .chip-core::before,
+    .chip-core::after {
+      content: "";
+      position: absolute;
+      inset: -18px;
+      border-radius: 32px;
+      border: 1px dashed rgba(255,255,255,0.16);
+    }
+
+    .chip-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.36;
+      background:
+        linear-gradient(90deg, transparent 0 8%, rgba(255,255,255,0.12) 8% 9%, transparent 9% 91%, rgba(255,255,255,0.12) 91% 92%, transparent 92% 100%),
+        linear-gradient(transparent 0 8%, rgba(255,255,255,0.12) 8% 9%, transparent 9% 91%, rgba(255,255,255,0.12) 91% 92%, transparent 92% 100%);
+    }
+
+    section {
+      padding: 44px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #8daeff;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--text-3);
+      line-height: 1.75;
+      max-width: 760px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-5 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .grid-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .card {
+      position: relative;
+      padding: 22px;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--border-2);
+      box-shadow: var(--shadow-2);
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -40% auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 68%);
+      pointer-events: none;
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border-2);
+      transition: transform var(--transition-fast);
+    }
+
+    .card:hover .card-icon {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--text-3);
+      line-height: 1.72;
+      font-size: 15px;
+    }
+
+    .tag-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 8px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-1);
+      color: var(--text-2);
+    }
+
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .metric-card {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-2);
+    }
+
+    .metric-card strong {
+      display: block;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .metric-card span {
+      display: block;
+      color: var(--text-3);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .subnav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 14px 0 20px;
+    }
+
+    .tab-btn {
+      padding: 10px 14px;
+      border-radius: var(--radius-pill);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-2);
+      color: var(--text-1);
+      cursor: pointer;
+      font-weight: 700;
+      transition: background var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .tab-btn.active {
+      background: rgba(75,140,255,0.17);
+      border-color: rgba(75,140,255,0.34);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .bullet {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(75,140,255,0.18);
+      border: 1px solid rgba(75,140,255,0.28);
+      font-size: 13px;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .bullet.green {
+      background: rgba(48,209,127,0.18);
+      border-color: rgba(48,209,127,0.28);
+    }
+
+    .bullet.orange {
+      background: rgba(255,157,57,0.18);
+      border-color: rgba(255,157,57,0.28);
+    }
+
+    .bullet.purple {
+      background: rgba(145,108,255,0.18);
+      border-color: rgba(145,108,255,0.28);
+    }
+
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .announce-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 18px;
+    }
+
+    .hero-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .mini-block {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .mini-block strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .mini-block p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text-3);
+    }
+
+    .quote-card {
+      position: relative;
+      padding: 24px;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(145,108,255,0.18), rgba(75,140,255,0.12)),
+        rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      overflow: hidden;
+    }
+
+    .quote-card::before {
+      content: "“";
+      position: absolute;
+      top: -12px;
+      left: 14px;
+      font-size: 84px;
+      line-height: 1;
+      color: rgba(255,255,255,0.10);
+      font-weight: 900;
+    }
+
+    .quote-card blockquote {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.55;
+      letter-spacing: -0.02em;
+    }
+
+    .quote-card footer {
+      margin-top: 16px;
+      color: var(--text-3);
+      font-size: 14px;
+    }
+
+    .score-bars {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 56px;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .score-row label {
+      font-size: 14px;
+      color: var(--text-2);
+      font-weight: 700;
+    }
+
+    .score-bar {
+      position: relative;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .score-fill {
+      position: absolute;
+      inset: 0 auto 0 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue-1), var(--cyan-1));
+    }
+
+    .score-fill.green {
+      background: linear-gradient(90deg, var(--green-1), var(--green-2));
+    }
+
+    .score-fill.orange {
+      background: linear-gradient(90deg, var(--orange-1), var(--orange-2));
+    }
+
+    .score-fill.purple {
+      background: linear-gradient(90deg, var(--purple-1), var(--purple-2));
+    }
+
+    .score-fill.red {
+      background: linear-gradient(90deg, var(--red-1), var(--red-2));
+    }
+
+    .score-row span {
+      text-align: right;
+      font-size: 14px;
+      color: var(--text-3);
+      font-weight: 700;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+    }
+
+    .dashboard-shell {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .dashboard-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .dashboard-top h4 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .dashboard-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .dashboard-pill {
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .feed {
+      display: grid;
+      gap: 12px;
+    }
+
+    .feed-item {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .feed-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .feed-item p {
+      margin: 0;
+      color: var(--text-3);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .avatar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      background: linear-gradient(135deg, rgba(75,140,255,0.7), rgba(145,108,255,0.55));
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .avatar.green {
+      background: linear-gradient(135deg, rgba(48,209,127,0.7), rgba(115,239,174,0.55));
+    }
+
+    .avatar.orange {
+      background: linear-gradient(135deg, rgba(255,157,57,0.72), rgba(255,195,108,0.58));
+    }
+
+    .avatar.cyan {
+      background: linear-gradient(135deg, rgba(67,213,255,0.72), rgba(136,235,255,0.58));
+    }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .announce-grid,
+      .dashboard-grid,
+      .grid-5 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .mobile-toggle {
+        display: inline-flex;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 10px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .hero-badges,
+      .hero-mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .score-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        width: min(calc(100% - 20px), var(--max-width));
+      }
+
+      .hero-subtitle {
+        font-size: 17px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .metric-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .card,
+      .hero-panel,
+      .dashboard-shell,
+      .quote-card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+  <div class="orb orb-4" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="ThinkForge home">
+        <div class="brand-mark">TF</div>
+        <div class="brand-copy">
+          <strong>ThinkForge</strong>
+          <span>Think better. Think smarter.</span>
+        </div>
+      </a>
+
+      <button
+        class="btn btn-outline btn-sm mobile-toggle"
+        id="mobileToggle"
+        type="button"
+      >
+        Menu
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#systems">Systems</a>
+        <a href="#products">Products</a>
+        <a href="#founder">Founder</a>
+        <a href="#labs">Labs</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#join">Join</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button
+          class="btn btn-outline btn-sm"
+          type="button"
+          data-open-modal="demoModal"
+        >
+          Demo
+        </button>
+        <button
+          class="btn btn-primary btn-sm"
+          type="button"
+          onclick="scrollToSection('join')"
+        >
+          Enroll
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow-row">
+            <span class="eyebrow-pill">
+              <span class="eyebrow-dot"></span>
+              Founder Mode Active
+            </span>
+            <span class="eyebrow-pill">Software + Hardware + AI Chips</span>
+            <span class="eyebrow-pill">Multi-AI Judging</span>
+          </div>
+
+          <span class="hero-kicker">Future Technology Company</span>
+
+          <h1 class="hero-title">
+            Build the future with
+            <span class="gradient-text">ThinkForge</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            ThinkForge is a next-generation company for thinkers, builders,
+            founders, inventors, and future startup teams. It combines software,
+            hardware, AI systems, and chip ambition into one founder-led
+            platform designed to help people think better, build smarter, and
+            launch bigger.
+          </p>
+
+          <div class="hero-actions">
+            <button
+              class="btn btn-green"
+              type="button"
+              onclick="scrollToSection('systems')"
+            >
+              Start Thinking
+            </button>
+
+            <button
+              class="btn btn-primary"
+              type="button"
+              onclick="scrollToSection('join')"
+            >
+              Enroll Now
+            </button>
+
+            <button
+              class="btn btn-outline"
+              type="button"
+              data-open-modal="founderModal"
+            >
+              Founder Notes
+            </button>
+
+            <button
+              class="btn btn-orange"
+              type="button"
+              onclick="showToast('ThinkForge live', 'Founder systems initialized.')"
+            >
+              Launch Signal
+            </button>
+          </div>
+
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <strong data-count="10">0</strong>
+              <span>AI judges planned for scoring and review</span>
+            </div>
+
+            <div class="hero-badge">
+              <strong data-count="3">0</strong>
+              <span>Main founder group size</span>
+            </div>
+
+            <div class="hero-badge">
+              <strong data-count="100">0</strong>
+              <span>Million-user scale vision</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stack">
+          <div class="hero-panel">
+            <div class="terminal-header" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="hero-panel-grid">
+              <div class="surface">
+                <div class="surface-top">
+                  <span>thinkforge/index.html</span>
+                  <span>Founder build</span>
+                </div>
+
+                <div class="code-view">
+&lt;section class="hero"&gt;
+  &lt;h1&gt;Think better. Think smarter.&lt;/h1&gt;
+  &lt;p&gt;Software. Hardware. AI. Chips.&lt;/p&gt;
+  &lt;button&gt;Start Thinking&lt;/button&gt;
+  &lt;button&gt;Enroll&lt;/button&gt;
+&lt;/section&gt;
+
+const THINKFORGE = {
+  company: true,
+  founder: "Tengwen",
+  aiJudges: 10,
+  founderGroup: 3,
+  products: ["software", "hardware", "chips"],
+  mission: "build the future"
+};
+                </div>
+              </div>
+
+              <div class="surface chip-stage">
+                <div class="chip-ring r1"></div>
+                <div class="chip-ring r2"></div>
+                <div class="chip-ring r3"></div>
+                <div class="chip-core">
+                  TF
+                  <div class="chip-lines"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-mini-grid">
+              <div class="mini-block">
+                <strong>Core Rule</strong>
+                <p>
+                  Users build. AI evaluates. The boss decides.
+                </p>
+              </div>
+
+              <div class="mini-block">
+                <strong>Company Scope</strong>
+                <p>
+                  ThinkForge is not only a website — it is a full-stack
+                  technology vision.
+                </p>
+              </div>
+
+              <div class="mini-block">
+                <strong>Founder Culture</strong>
+                <p>
+                  Strong ideas, fast execution, and a serious startup mindset.
+                </p>
+              </div>
+
+              <div class="mini-block">
+                <strong>Long-Term Goal</strong>
+                <p>
+                  Build products that can grow from prototypes into real
+                  startups.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-shell">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">About ThinkForge</span>
+            <h2 class="section-title">
+              A company for thinkers, builders, and founders
+            </h2>
+            <p class="section-copy">
+              ThinkForge combines invention, startup culture, systems thinking,
+              and technical ambition into one unified platform. The goal is not
+              just to teach — it is to create, prototype, launch, and lead.
+            </p>
+          </div>
+
+          <button
+            class="btn btn-outline"
+            type="button"
+            onclick="showToast('Mission Loaded', 'ThinkForge founder mission activated.')"
+          >
+            Load Mission
+          </button>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Think</h3>
+            <p>
+              Solve problems, sharpen logic, train reasoning, and build the
+              mental habits needed for difficult challenges.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Logic</span>
+              <span class="tag">Math</span>
+              <span class="tag">Reasoning</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💡</div>
+            <h3>Create</h3>
+            <p>
+              Turn rough ideas into clearer concepts, better prototypes, and
+              more powerful product visions.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Ideas</span>
+              <span class="tag">Concepts</span>
+              <span class="tag">Prototypes</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>Build</h3>
+            <p>
+              Build software, design hardware, model AI systems, and think in
+              terms of real products and real execution.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Code</span>
+              <span class="tag">Hardware</span>
+              <span class="tag">Systems</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚀</div>
+            <h3>Launch</h3>
+            <p>
+              Let the strongest work rise, feature top ideas, and eventually
+              push some projects into real startup territory.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Startup</span>
+              <span class="tag">Founder</span>
+              <span class="tag">Scale</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="metric-strip">
+          <div class="metric-card">
+            <strong data-count="24">0</strong>
+            <span>Major platform modules planned</span>
+          </div>
+          <div class="metric-card">
+            <strong data-count="365">0</strong>
+            <span>Days a year to keep building</span>
+          </div>
+          <div class="metric-card">
+            <strong data-count="7">0</strong>
+            <span>Core product tracks in motion</span>
+          </div>
+          <div class="metric-card">
+            <strong data-count="1">0</strong>
+            <span>Founder vision driving the company</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="systems" class="section-shell">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Core Systems</span>
+            <h2 class="section-title">
+              ThinkForge is built like a system, not a toy
+            </h2>
+            <p class="section-copy">
+              Instead of one simple page, ThinkForge is designed as a connected
+              operating system for thinking, building, scoring, showcasing, and
+              scaling ambitious projects.
+            </p>
+          </div>
+        </div>
+
+        <div class="subnav">
+          <button class="tab-btn active" type="button" data-tab="system-pages">
+            Pages
+          </button>
+          <button class="tab-btn" type="button" data-tab="system-roles">
+            Roles
+          </button>
+          <button class="tab-btn" type="button" data-tab="system-engine">
+            AI Engine
+          </button>
+          <button class="tab-btn" type="button" data-tab="system-growth">
+            Growth
+          </button>
+        </div>
+
+        <div class="tab-panel active" id="tab-system-pages">
+          <div class="grid-2">
+            <article class="card">
+              <h3>Main Pages</h3>
+              <div class="list">
+                <div class="list-item">
+                  <div class="bullet">🧠</div>
+                  <div>
+                    <strong>Thinking Page</strong>
+                    <div class="muted">
+                      Logic, puzzles, challenge systems, math strategy, and
+                      mental training tools.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="bullet green">💡</div>
+                  <div>
+                    <strong>Ideas Page</strong>
+                    <div class="muted">
+                      Startup concepts, invention prompts, new problem spaces,
+                      and product directions.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="bullet orange">🛠</div>
+                  <div>
+                    <strong>Projects Page</strong>
+                    <div class="muted">
+                      Prototypes, apps, systems, tools, and product experiments
+                      built by users and founder teams.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="bullet purple">🏆</div>
+                  <div>
+                    <strong>Featured Page</strong>
+                    <div class="muted">
+                      The strongest work rises here and can become the seed of
+                      real startups.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>System Philosophy</h3>
+              <p>
+                Every page should serve a clear function in the bigger company:
+                train minds, organize ideas, support building, and elevate the
+                strongest output.
+              </p>
+
+              <div class="score-bars">
+                <div class="score-row">
+                  <label>Clarity</label>
+                  <div class="score-bar">
+                    <div class="score-fill" style="width: 92%;"></div>
+                  </div>
+                  <span>92</span>
+                </div>
+
+                <div class="score-row">
+                  <label>Ambition</label>
+                  <div class="score-bar">
+                    <div class="score-fill purple" style="width: 98%;"></div>
+                  </div>
+                  <span>98</span>
+                </div>
+
+                <div class="score-row">
+                  <label>Utility</label>
+                  <div class="score-bar">
+                    <div class="score-fill green" style="width: 88%;"></div>
+                  </div>
+                  <span>88</span>
+                </div>
+
+                <div class="score-row">
+                  <label>Scalability</label>
+                  <div class="score-bar">
+                    <div class="score-fill orange" style="width: 94%;"></div>
+                  </div>
+                  <span>94</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-system-roles">
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-icon">A</div>
+              <h3>Thinkers</h3>
+              <p>
+                Users who solve, analyze, question, and improve the quality of
+                ideas through reasoning.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">B</div>
+              <h3>Builders</h3>
+              <p>
+                Users who code, design, prototype, and turn abstract concepts
+                into concrete outputs.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">C</div>
+              <h3>Founders</h3>
+              <p>
+                Users who define problems, make decisions, guide priorities, and
+                push execution forward.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-system-engine">
+          <div class="announce-grid">
+            <article class="card">
+              <h3>Multi-AI Judging Engine</h3>
+              <p>
+                ThinkForge uses multiple AI judges rather than relying on one
+                model. Different AIs evaluate different strengths.
+              </p>
+
+              <div class="list">
+                <div class="list-item">
+                  <div class="bullet">1</div>
+                  <div>
+                    <strong>Logic Judge</strong>
+                    <div class="muted">
+                      Checks correctness, reasoning quality, and soundness.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="bullet green">2</div>
+                  <div>
+                    <strong>Creativity Judge</strong>
+                    <div class="muted">
+                      Looks for originality, novelty, and unusual power.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="bullet orange">3</div>
+                  <div>
+                    <strong>Builder Judge</strong>
+                    <div class="muted">
+                      Reviews technical completeness, usefulness, and execution.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="bullet purple">4</div>
+                  <div>
+                    <strong>Impact Judge</strong>
+                    <div class="muted">
+                      Measures startup potential, real-world value, and scale.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="quote-card">
+              <blockquote>
+                Great systems do not just reward popularity. They reward work
+                that is actually strong.
+              </blockquote>
+              <footer>ThinkForge AI philosophy</footer>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-system-growth">
+          <div class="dashboard-grid">
+            <article class="dashboard-shell">
+              <div class="dashboard-top">
+                <h4>Growth dashboard</h4>
+                <div class="dashboard-pills">
+                  <span class="dashboard-pill">Founder-led</span>
+                  <span class="dashboard-pill">AI-assisted</span>
+                  <span class="dashboard-pill">Startup-ready</span>
+                </div>
+              </div>
+
+              <div class="feed">
+                <div class="feed-item">
+                  <strong>Phase 1</strong>
+                  <p>
+                    Launch the main site, public identity, and founder
+                    interface.
+                  </p>
+                </div>
+
+                <div class="feed-item">
+                  <strong>Phase 2</strong>
+                  <p>
+                    Add thinking systems, challenge modules, and deeper scoring.
+                  </p>
+                </div>
+
+                <div class="feed-item">
+                  <strong>Phase 3</strong>
+                  <p>
+                    Add project workflows, idea pipelines, and collaboration.
+                  </p>
+                </div>
+
+                <div class="feed-item">
+                  <strong>Phase 4</strong>
+                  <p>
+                    Expand toward hardware design and AI chip concept labs.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="dashboard-shell">
+              <h4 style="margin-top:0;">Founder team</h4>
+              <p class="muted">
+                The main group is fixed and focused. Others can still cooperate
+                from separate accounts.
+              </p>
+
+              <div class="avatar-row">
+                <div class="avatar">T</div>
+                <div class="avatar green">F</div>
+                <div class="avatar orange">G</div>
+                <div class="avatar cyan">+</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+        <section id="products" class="section-shell">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Products + Vision</span>
+            <h2 class="section-title">
+              ThinkForge builds across software, hardware, and AI chips
+            </h2>
+            <p class="section-copy">
+              This is not a one-category idea. ThinkForge is meant to stretch
+              across multiple layers of technology so the company can build
+              complete systems, not just isolated tools.
+            </p>
+          </div>
+
+          <button
+            class="btn btn-outline"
+            type="button"
+            onclick="showToast('Product map loaded', 'Software, hardware, and chip tracks online.')"
+          >
+            Load Product Map
+          </button>
+        </div>
+
+        <div class="subnav">
+          <button class="tab-btn active" type="button" data-tab="products-software">
+            Software
+          </button>
+          <button class="tab-btn" type="button" data-tab="products-hardware">
+            Hardware
+          </button>
+          <button class="tab-btn" type="button" data-tab="products-chips">
+            AI Chips
+          </button>
+          <button class="tab-btn" type="button" data-tab="products-stack">
+            Full Stack
+          </button>
+        </div>
+
+        <div class="tab-panel active" id="tab-products-software">
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-icon">🌐</div>
+              <h3>ThinkForge Platform</h3>
+              <p>
+                The main digital home for thinking challenges, ideas, projects,
+                scoring systems, featured work, and founder tools.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Platform</span>
+                <span class="tag">Pages</span>
+                <span class="tag">Workflow</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🤖</div>
+              <h3>AI Judge Engine</h3>
+              <p>
+                A multi-model scoring system that evaluates work from different
+                angles such as logic, originality, usefulness, and execution.
+              </p>
+              <div class="tag-row">
+                <span class="tag">AI</span>
+                <span class="tag">Scoring</span>
+                <span class="tag">Evaluation</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">📊</div>
+              <h3>Leaderboard System</h3>
+              <p>
+                Competitive rankings for thinkers, builders, ideas, prototypes,
+                and eventually startup teams.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Ranking</span>
+                <span class="tag">Competition</span>
+                <span class="tag">Progress</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🧩</div>
+              <h3>Challenge Engine</h3>
+              <p>
+                Daily and weekly challenge flows for logic, math, creativity,
+                and startup problem-solving.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Challenges</span>
+                <span class="tag">Logic</span>
+                <span class="tag">Math</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">💬</div>
+              <h3>Founder Feed</h3>
+              <p>
+                A future interface for announcements, idea pushes, founder
+                reviews, launch notes, and system-wide direction.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Feed</span>
+                <span class="tag">Founder</span>
+                <span class="tag">Direction</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🚀</div>
+              <h3>Launch Board</h3>
+              <p>
+                A space where the strongest projects move from prototype stage
+                toward public release and startup formation.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Launch</span>
+                <span class="tag">Startup</span>
+                <span class="tag">Public</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-products-hardware">
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-icon">🔧</div>
+              <h3>Inventor Kits</h3>
+              <p>
+                Modular hardware kits for experiments, creative engineering,
+                system thinking, and physical prototyping.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Kits</span>
+                <span class="tag">Experiments</span>
+                <span class="tag">Physical Build</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🦾</div>
+              <h3>Builder Devices</h3>
+              <p>
+                Future smart devices that help inventors sketch, simulate, test,
+                and demonstrate ideas in real-world form.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Devices</span>
+                <span class="tag">Tools</span>
+                <span class="tag">Prototype</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">📦</div>
+              <h3>Prototype Systems</h3>
+              <p>
+                Hardware proof-of-concepts that support startup exploration and
+                product testing.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Prototype</span>
+                <span class="tag">System</span>
+                <span class="tag">Experiment</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🏗</div>
+              <h3>Maker Lab Units</h3>
+              <p>
+                Future lab modules for engineering challenges, design thinking,
+                and invention-based learning.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Lab</span>
+                <span class="tag">Maker</span>
+                <span class="tag">Design</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🎛</div>
+              <h3>Control Interfaces</h3>
+              <p>
+                Control panels, dashboards, and physical interfaces that bring
+                digital systems into touchable experiences.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Interface</span>
+                <span class="tag">Control</span>
+                <span class="tag">Panel</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">⚡</div>
+              <h3>Performance Boards</h3>
+              <p>
+                Experimental hardware boards designed for fast iteration,
+                smarter testing, and future compute exploration.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Boards</span>
+                <span class="tag">Testing</span>
+                <span class="tag">Compute</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-products-chips">
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-icon">🧠</div>
+              <h3>Inference Chips</h3>
+              <p>
+                Concepts for fast AI decision-making and efficient deployment in
+                future smart systems.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Inference</span>
+                <span class="tag">Edge AI</span>
+                <span class="tag">Speed</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">⚙️</div>
+              <h3>Acceleration Designs</h3>
+              <p>
+                Architecture ideas for improved parallelism, lower latency, and
+                stronger system efficiency.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Architecture</span>
+                <span class="tag">Latency</span>
+                <span class="tag">Efficiency</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🏭</div>
+              <h3>Chip Vision Lab</h3>
+              <p>
+                A place inside ThinkForge dedicated to long-term silicon
+                thinking, future compute strategy, and deeper technical vision.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Silicon</span>
+                <span class="tag">Vision</span>
+                <span class="tag">Lab</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🔋</div>
+              <h3>Low-Power Designs</h3>
+              <p>
+                Chip concepts focused on doing more with less power while still
+                supporting useful AI workloads.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Low Power</span>
+                <span class="tag">Efficiency</span>
+                <span class="tag">Systems</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">📡</div>
+              <h3>Edge Compute Nodes</h3>
+              <p>
+                Future silicon and board combinations that push intelligence
+                closer to the user and device.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Edge</span>
+                <span class="tag">Nodes</span>
+                <span class="tag">Realtime</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🔬</div>
+              <h3>Research Tracks</h3>
+              <p>
+                Long-term research lanes for better AI acceleration, smarter
+                memory design, and founder-led compute experiments.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Research</span>
+                <span class="tag">Memory</span>
+                <span class="tag">Future</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-products-stack">
+          <div class="announce-grid">
+            <article class="card">
+              <h3>Why the full stack matters</h3>
+              <p>
+                Software without hardware can be limited. Hardware without good
+                software can feel empty. Chips without a company vision can stay
+                as ideas forever. ThinkForge aims to connect all three.
+              </p>
+
+              <div class="list">
+                <div class="list-item">
+                  <div class="bullet">S</div>
+                  <div>
+                    <strong>Software layer</strong>
+                    <div class="muted">
+                      Interfaces, workflows, scoring, dashboards, and product
+                      logic.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="bullet green">H</div>
+                  <div>
+                    <strong>Hardware layer</strong>
+                    <div class="muted">
+                      Devices, kits, prototypes, experiments, and physical
+                      demonstrations.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="bullet orange">C</div>
+                  <div>
+                    <strong>Chip layer</strong>
+                    <div class="muted">
+                      Future acceleration, AI compute, and system-level
+                      performance thinking.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="quote-card">
+              <blockquote>
+                A great company does not just make one thing. It learns how the
+                layers connect, and then it builds across them.
+              </blockquote>
+              <footer>ThinkForge product philosophy</footer>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="founder" class="section-shell">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Founder System</span>
+            <h2 class="section-title">
+              Founder-led governance with AI assistance
+            </h2>
+            <p class="section-copy">
+              ThinkForge is not designed as a random crowd project. It is
+              designed with a clear chain of review: users build, AI evaluates,
+              and the founder makes the final call.
+            </p>
+          </div>
+        </div>
+
+        <div class="announce-grid">
+          <article class="card">
+            <h3>How decisions work</h3>
+
+            <div class="list">
+              <div class="list-item">
+                <div class="bullet">1</div>
+                <div>
+                  <strong>Users submit ideas and projects</strong>
+                  <div class="muted">
+                    Anyone can participate and cooperate using separate
+                    accounts.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet green">2</div>
+                <div>
+                  <strong>Multiple AI judges score the work</strong>
+                  <div class="muted">
+                    Logic, creativity, usefulness, difficulty, technical
+                    quality, and impact all matter.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet orange">3</div>
+                <div>
+                  <strong>Founder reviews the results</strong>
+                  <div class="muted">
+                    AI can assist, but it does not own the final decision.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet purple">4</div>
+                <div>
+                  <strong>Winners are featured or advanced</strong>
+                  <div class="muted">
+                    Great work can be highlighted, recognized, or developed into
+                    a real startup path.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">👑</div>
+            <h3>Boss Mode</h3>
+            <p>
+              Tengwen is the founder and final reviewer of the platform.
+              Founder authority keeps the company vision clear instead of messy.
+            </p>
+
+            <div class="tag-row">
+              <span class="tag">Founder</span>
+              <span class="tag">Final Review</span>
+              <span class="tag">Direction</span>
+            </div>
+
+            <div class="hero-mini-grid">
+              <div class="mini-block">
+                <strong>Rule</strong>
+                <p>AI evaluates. The boss decides.</p>
+              </div>
+
+              <div class="mini-block">
+                <strong>Style</strong>
+                <p>Fast, bold, and startup-focused.</p>
+              </div>
+
+              <div class="mini-block">
+                <strong>Goal</strong>
+                <p>Build real products, not fake busywork.</p>
+              </div>
+
+              <div class="mini-block">
+                <strong>Mindset</strong>
+                <p>Think bigger and execute faster.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="dashboard-grid" style="margin-top:18px;">
+          <article class="dashboard-shell">
+            <div class="dashboard-top">
+              <h4>Founder dashboard preview</h4>
+              <div class="dashboard-pills">
+                <span class="dashboard-pill">Review Queue</span>
+                <span class="dashboard-pill">AI Scores</span>
+                <span class="dashboard-pill">Featured Picks</span>
+              </div>
+            </div>
+
+            <div class="feed">
+              <div class="feed-item">
+                <strong>Submission Queue</strong>
+                <p>
+                  18 active project reviews, 9 idea reviews, and 4 challenge
+                  disputes waiting for final founder attention.
+                </p>
+              </div>
+
+              <div class="feed-item">
+                <strong>AI Review Notes</strong>
+                <p>
+                  Logic judge strongly favors Project Atlas. Creativity judge
+                  favors Idea Nova. Builder judge prefers ForgeBoard v2.
+                </p>
+              </div>
+
+              <div class="feed-item">
+                <strong>Featured Candidates</strong>
+                <p>
+                  Two products are trending toward Featured status and one may
+                  be eligible for startup-track promotion.
+                </p>
+              </div>
+
+              <div class="feed-item">
+                <strong>Holiday Prize Window</strong>
+                <p>
+                  Prize systems remain rare and special. Most rewards are
+                  reputation, rankings, and visibility.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="dashboard-shell">
+            <h4 style="margin-top:0;">Founder principles</h4>
+
+            <div class="list">
+              <div class="list-item">
+                <div class="bullet">A</div>
+                <div>
+                  <strong>Clarity first</strong>
+                  <div class="muted">
+                    The platform should always know what it is trying to do.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet green">B</div>
+                <div>
+                  <strong>Build real things</strong>
+                  <div class="muted">
+                    Theory is useful, but the company grows by making actual
+                    products.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet orange">C</div>
+                <div>
+                  <strong>Reward strength</strong>
+                  <div class="muted">
+                    Good work should rise because it is strong, not because it
+                    is noisy.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet purple">D</div>
+                <div>
+                  <strong>Stay ambitious</strong>
+                  <div class="muted">
+                    ThinkForge should feel like a company with long-term range,
+                    not a tiny one-page experiment.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="labs" class="section-shell">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Labs + Modules</span>
+            <h2 class="section-title">
+              Specialized labs for invention, training, and startup growth
+            </h2>
+            <p class="section-copy">
+              ThinkForge can expand into focused zones where different types of
+              projects grow faster and with more structure.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🧪</div>
+            <h3>Idea Lab</h3>
+            <p>
+              A place for testing startup concepts, reframing problems, and
+              comparing different product directions.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Ideas</span>
+              <span class="tag">Problem Space</span>
+              <span class="tag">Exploration</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏗</div>
+            <h3>Build Lab</h3>
+            <p>
+              A zone for prototypes, working demos, software experiments, and
+              future hardware proof-of-concepts.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Prototype</span>
+              <span class="tag">Demo</span>
+              <span class="tag">Execution</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📈</div>
+            <h3>Startup Lab</h3>
+            <p>
+              A launch-oriented space for projects that show enough promise to
+              move toward team formation and public release.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Launch</span>
+              <span class="tag">Team</span>
+              <span class="tag">Startup</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔬</div>
+            <h3>Chip Lab</h3>
+            <p>
+              A more technical research zone for future compute design,
+              acceleration ideas, and silicon-level thinking.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Compute</span>
+              <span class="tag">Research</span>
+              <span class="tag">Silicon</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Reasoning Lab</h3>
+            <p>
+              Advanced training for mental models, strategy habits, and deep
+              decision-making skills.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Reasoning</span>
+              <span class="tag">Mental Models</span>
+              <span class="tag">Strategy</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🏆</div>
+            <h3>Featured Lab</h3>
+            <p>
+              A place where top-ranked work receives more attention, polishing,
+              founder feedback, and launch preparation.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Featured</span>
+              <span class="tag">Polish</span>
+              <span class="tag">Advance</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="announce-grid" style="margin-top:18px;">
+          <article class="card">
+            <h3>Lab progression flow</h3>
+
+            <div class="list">
+              <div class="list-item">
+                <div class="bullet">1</div>
+                <div>
+                  <strong>Enter through thinking or ideas</strong>
+                  <div class="muted">
+                    Users usually begin with challenges or concepts.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet green">2</div>
+                <div>
+                  <strong>Move into build mode</strong>
+                  <div class="muted">
+                    Good ideas become projects and start to take shape.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet orange">3</div>
+                <div>
+                  <strong>Receive AI evaluation</strong>
+                  <div class="muted">
+                    Strong work gets deeper review and better rankings.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet purple">4</div>
+                <div>
+                  <strong>Advance to featured or startup path</strong>
+                  <div class="muted">
+                    The best work gets surfaced and may go much further.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="quote-card">
+            <blockquote>
+              The point is not only to think well. The point is to think well
+              enough to build something powerful.
+            </blockquote>
+            <footer>ThinkForge lab principle</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="leaderboard" class="section-shell">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Rankings</span>
+            <h2 class="section-title">
+              A leaderboard for thinkers, builders, and big ideas
+            </h2>
+            <p class="section-copy">
+              This system uses placeholder users so the platform feels scalable.
+              It is a platform demo, not a friend list.
+            </p>
+          </div>
+
+          <button
+            class="btn btn-outline"
+            type="button"
+            onclick="showToast('Leaderboard loaded', 'Generic ranking system online.')"
+          >
+            Refresh Board
+          </button>
+        </div>
+
+        <div class="subnav">
+          <button class="tab-btn active board-btn" type="button" data-board="thinkers">
+            Top Thinkers
+          </button>
+          <button class="tab-btn board-btn" type="button" data-board="builders">
+            Top Builders
+          </button>
+          <button class="tab-btn board-btn" type="button" data-board="ideas">
+            Top Ideas
+          </button>
+          <button class="tab-btn board-btn" type="button" data-board="startups">
+            Startup Track
+          </button>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="dashboard-shell">
+            <div class="dashboard-top">
+              <h4>Live ranking board</h4>
+              <div class="dashboard-pills">
+                <span class="dashboard-pill">AI Scored</span>
+                <span class="dashboard-pill">Founder Reviewed</span>
+                <span class="dashboard-pill">Public Facing</span>
+              </div>
+            </div>
+
+            <div id="leaderboardList" class="stack"></div>
+
+            <div
+              style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;"
+            >
+              <button class="btn btn-green" type="button" onclick="addUser()">
+                Add User
+              </button>
+              <button class="btn btn-primary" type="button" onclick="simulateAI()">
+                AI Judge Score
+              </button>
+              <button class="btn btn-orange" type="button" onclick="promoteLeader()">
+                Promote Leader
+              </button>
+              <button class="btn btn-outline" type="button" onclick="resetBoard()">
+                Reset
+              </button>
+            </div>
+          </article>
+
+          <article class="dashboard-shell">
+            <h4 style="margin-top:0;">How scoring works</h4>
+
+            <div class="score-bars">
+              <div class="score-row">
+                <label>Logic</label>
+                <div class="score-bar">
+                  <div class="score-fill" style="width: 94%;"></div>
+                </div>
+                <span>94</span>
+              </div>
+
+              <div class="score-row">
+                <label>Creativity</label>
+                <div class="score-bar">
+                  <div class="score-fill purple" style="width: 91%;"></div>
+                </div>
+                <span>91</span>
+              </div>
+
+              <div class="score-row">
+                <label>Usefulness</label>
+                <div class="score-bar">
+                  <div class="score-fill green" style="width: 88%;"></div>
+                </div>
+                <span>88</span>
+              </div>
+
+              <div class="score-row">
+                <label>Difficulty</label>
+                <div class="score-bar">
+                  <div class="score-fill orange" style="width: 86%;"></div>
+                </div>
+                <span>86</span>
+              </div>
+
+              <div class="score-row">
+                <label>Impact</label>
+                <div class="score-bar">
+                  <div class="score-fill red" style="width: 95%;"></div>
+                </div>
+                <span>95</span>
+              </div>
+            </div>
+
+            <div class="list">
+              <div class="list-item">
+                <div class="bullet">A</div>
+                <div>
+                  <strong>AI scores first</strong>
+                  <div class="muted">
+                    Multiple judges produce weighted evaluations.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet green">B</div>
+                <div>
+                  <strong>Rankings update</strong>
+                  <div class="muted">
+                    Boards reflect the strongest current work.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet orange">C</div>
+                <div>
+                  <strong>Founder can override</strong>
+                  <div class="muted">
+                    Final direction still belongs to the boss.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section-shell">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Roadmap</span>
+            <h2 class="section-title">
+              The path from website to real company
+            </h2>
+            <p class="section-copy">
+              Big companies do not appear all at once. They grow in stages, but
+              they grow with a large direction in mind.
+            </p>
+          </div>
+        </div>
+
+        <div class="stack">
+          <article class="card">
+            <h3>Phase 1 — Brand and site foundation</h3>
+            <p>
+              Establish the public identity, logo, site structure, and founder
+              vision so ThinkForge has a clear front door.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Phase 2 — Thinking and challenge systems</h3>
+            <p>
+              Add logic pages, challenge engines, progress tracking, and deeper
+              mental training tools.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Phase 3 — Ideas and project workflows</h3>
+            <p>
+              Introduce idea posting, project modules, richer evaluation, and
+              collaboration from separate accounts.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Phase 4 — AI judging and founder review</h3>
+            <p>
+              Strengthen the ranking systems and connect them to featured work,
+              launch pipelines, and rare award opportunities.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Phase 5 — Hardware and compute vision</h3>
+            <p>
+              Expand the company beyond software into inventor kits, devices,
+              and future chip ideas that support the larger mission.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+        <section id="pricing" class="section-shell">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Pricing + Awards</span>
+            <h2 class="section-title">
+              Open to join, premium for classes, rare prizes for special moments
+            </h2>
+            <p class="section-copy">
+              ThinkForge can be accessible while still supporting deeper premium
+              training. Awards stay rare so they feel special.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">🚪</div>
+            <h3>Join + Create</h3>
+            <p>
+              Low-cost access for users who want to join the platform, explore
+              ideas, build projects, and still have a chance to rise.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Lower Cost</span>
+              <span class="tag">Create</span>
+              <span class="tag">Compete</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎓</div>
+            <h3>Classes</h3>
+            <p>
+              Higher-tier guided training for users who want deeper structure,
+              support, lessons, and serious learning pathways.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Premium</span>
+              <span class="tag">Training</span>
+              <span class="tag">Guided</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🎉</div>
+            <h3>Holiday Awards</h3>
+            <p>
+              Real prizes stay rare and appear on holidays or special occasions,
+              while normal recognition comes through ranking and featured status.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Rare</span>
+              <span class="tag">Holiday</span>
+              <span class="tag">Special</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="announce-grid" style="margin-top:18px;">
+          <article class="card">
+            <h3>How the model works</h3>
+            <div class="list">
+              <div class="list-item">
+                <div class="bullet">1</div>
+                <div>
+                  <strong>Joiners can still win</strong>
+                  <div class="muted">
+                    Lower-cost users can still submit work, be featured, and rise.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet green">2</div>
+                <div>
+                  <strong>Classes fund depth</strong>
+                  <div class="muted">
+                    Premium classes support more structure and better training.
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div class="bullet orange">3</div>
+                <div>
+                  <strong>Prizes stay uncommon</strong>
+                  <div class="muted">
+                    Rare awards feel bigger than constant small rewards.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="quote-card">
+            <blockquote>
+              Recognition can happen often. Prizes should feel earned and rare.
+            </blockquote>
+            <footer>ThinkForge reward philosophy</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section-shell">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Questions</span>
+            <h2 class="section-title">
+              Frequently asked questions
+            </h2>
+            <p class="section-copy">
+              Important questions about the platform, company, and founder system.
+            </p>
+          </div>
+        </div>
+
+        <div class="stack">
+          <details class="card">
+            <summary style="cursor:pointer; font-weight:800; font-size:18px;">
+              What is ThinkForge?
+            </summary>
+            <p style="margin-top:14px;">
+              ThinkForge is a future-focused technology company and platform for
+              thinking, building, and launching. It aims to connect software,
+              hardware, AI systems, and startup culture.
+            </p>
+          </details>
+
+          <details class="card">
+            <summary style="cursor:pointer; font-weight:800; font-size:18px;">
+              Who decides winners?
+            </summary>
+            <p style="margin-top:14px;">
+              Multiple AI judges can help evaluate submissions, but the final
+              decision belongs to the founder.
+            </p>
+          </details>
+
+          <details class="card">
+            <summary style="cursor:pointer; font-weight:800; font-size:18px;">
+              Can users cooperate together?
+            </summary>
+            <p style="margin-top:14px;">
+              Yes. Users can work together from separate accounts instead of
+              needing one fixed shared group account.
+            </p>
+          </details>
+
+          <details class="card">
+            <summary style="cursor:pointer; font-weight:800; font-size:18px;">
+              Is ThinkForge only software?
+            </summary>
+            <p style="margin-top:14px;">
+              No. The long-term vision includes software, hardware, and AI chips.
+            </p>
+          </details>
+
+          <details class="card">
+            <summary style="cursor:pointer; font-weight:800; font-size:18px;">
+              Are prizes common?
+            </summary>
+            <p style="margin-top:14px;">
+              No. Prizes are meant for rare occasions or holidays. Most rewards
+              are ranking, visibility, featured placement, and reputation.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="section-shell">
+      <div class="container">
+        <div
+          class="card"
+          style="
+            padding: 12px;
+            border-radius: 28px;
+            background:
+              linear-gradient(135deg, rgba(75,140,255,0.20), rgba(48,209,127,0.14), rgba(145,108,255,0.20)),
+              rgba(255,255,255,0.03);
+          "
+        >
+          <div
+            style="
+              display:grid;
+              grid-template-columns: 1.05fr 0.95fr;
+              gap:18px;
+              padding:24px;
+              border-radius:22px;
+              background: rgba(4, 10, 20, 0.72);
+              border: 1px solid rgba(255,255,255,0.08);
+            "
+            class="join-shell"
+          >
+            <div>
+              <span class="section-label">Join ThinkForge</span>
+              <h2 class="section-title" style="margin-top:0;">
+                Enroll and start building
+              </h2>
+              <p class="section-copy">
+                Join the platform, pick your role, and start exploring ideas,
+                projects, and future startup paths.
+              </p>
+
+              <div class="list" style="margin-top:18px;">
+                <div class="list-item">
+                  <div class="bullet">1</div>
+                  <div>
+                    <strong>Start as a thinker, builder, founder, or explorer</strong>
+                    <div class="muted">Different users can contribute in different ways.</div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="bullet green">2</div>
+                  <div>
+                    <strong>Build from your own account</strong>
+                    <div class="muted">Cooperation can still happen without merging identities.</div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="bullet orange">3</div>
+                  <div>
+                    <strong>Grow toward featured status</strong>
+                    <div class="muted">Great work can move from ranking into real startup territory.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form id="joinForm" class="card" style="padding:20px;">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                  style="
+                    width:100%;
+                    padding:14px 16px;
+                    border-radius:16px;
+                    border:1px solid rgba(255,255,255,0.12);
+                    background:rgba(255,255,255,0.05);
+                    color:#edf4ff;
+                    outline:none;
+                  "
+                />
+
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Email address"
+                  required
+                  style="
+                    width:100%;
+                    padding:14px 16px;
+                    border-radius:16px;
+                    border:1px solid rgba(255,255,255,0.12);
+                    background:rgba(255,255,255,0.05);
+                    color:#edf4ff;
+                    outline:none;
+                  "
+                />
+
+                <select
+                  id="role"
+                  style="
+                    width:100%;
+                    padding:14px 16px;
+                    border-radius:16px;
+                    border:1px solid rgba(255,255,255,0.12);
+                    background:rgba(255,255,255,0.05);
+                    color:#edf4ff;
+                    outline:none;
+                  "
+                >
+                  <option>Thinker</option>
+                  <option>Builder</option>
+                  <option>Founder</option>
+                  <option>Explorer</option>
+                </select>
+
+                <input
+                  id="project"
+                  type="text"
+                  placeholder="Project idea"
+                  style="
+                    width:100%;
+                    padding:14px 16px;
+                    border-radius:16px;
+                    border:1px solid rgba(255,255,255,0.12);
+                    background:rgba(255,255,255,0.05);
+                    color:#edf4ff;
+                    outline:none;
+                  "
+                />
+
+                <textarea
+                  id="message"
+                  placeholder="What do you want to build?"
+                  style="
+                    grid-column:1 / -1;
+                    width:100%;
+                    min-height:120px;
+                    padding:14px 16px;
+                    border-radius:16px;
+                    border:1px solid rgba(255,255,255,0.12);
+                    background:rgba(255,255,255,0.05);
+                    color:#edf4ff;
+                    outline:none;
+                    resize:vertical;
+                  "
+                ></textarea>
+
+                <button
+                  class="btn btn-orange"
+                  type="submit"
+                  style="grid-column:1 / -1;"
+                >
+                  Submit Enrollment
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section-shell" style="padding: 38px 0 76px;">
+      <div class="container">
+        <div class="grid-4">
+          <div class="card">
+            <div class="brand" style="margin-bottom:12px;">
+              <div class="brand-mark">TF</div>
+              <div class="brand-copy">
+                <strong>ThinkForge</strong>
+                <span>Think better. Think smarter.</span>
+              </div>
+            </div>
+            <p style="margin:0; color:var(--text-3); line-height:1.7;">
+              A future technology company building software, hardware, AI
+              systems, and chip ideas for creators, inventors, and startup founders.
+            </p>
+            <div class="micro" style="margin-top:16px;">
+              © 2026 ThinkForge. Built by Tengwen.
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0;">Pages</h3>
+            <div class="stack micro" style="font-size:14px;">
+              <a href="#about">About</a>
+              <a href="#systems">Systems</a>
+              <a href="#products">Products</a>
+              <a href="#leaderboard">Leaderboard</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0;">Build</h3>
+            <div class="stack micro" style="font-size:14px;">
+              <a href="#labs">Labs</a>
+              <a href="#roadmap">Roadmap</a>
+              <a href="#faq">FAQ</a>
+              <a href="#join">Join</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0;">Founder</h3>
+            <div class="stack micro" style="font-size:14px;">
+              <span>Founder-led</span>
+              <span>AI-assisted</span>
+              <span>Startup-focused</span>
+              <span>Tengwen is the greatest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="demoModal"
+      style="
+        display:none;
+        position:fixed;
+        inset:0;
+        z-index:2000;
+        background:rgba(0,0,0,0.58);
+        padding:18px;
+        align-items:center;
+        justify-content:center;
+      "
+    >
+      <div
+        class="card"
+        style="
+          width:min(680px, 100%);
+          max-height:90vh;
+          overflow:auto;
+          border-radius:24px;
+          background:linear-gradient(180deg, #0d1a2f, #0a1425);
+        "
+      >
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px;">
+          <h3 style="margin:0;">ThinkForge Demo</h3>
+          <button class="btn btn-outline btn-sm" type="button" data-close-modal="demoModal">Close</button>
+        </div>
+        <p style="margin:0; color:var(--text-3); line-height:1.75;">
+          This is a giant founder-style prototype page. The next steps can turn
+          it into a live multi-page site with GitHub Pages, real navigation,
+          richer data, and stronger interactivity.
+        </p>
+      </div>
+    </div>
+
+    <div
+      id="founderModal"
+      style="
+        display:none;
+        position:fixed;
+        inset:0;
+        z-index:2000;
+        background:rgba(0,0,0,0.58);
+        padding:18px;
+        align-items:center;
+        justify-content:center;
+      "
+    >
+      <div
+        class="card"
+        style="
+          width:min(680px, 100%);
+          max-height:90vh;
+          overflow:auto;
+          border-radius:24px;
+          background:linear-gradient(180deg, #0d1a2f, #0a1425);
+        "
+      >
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px;">
+          <h3 style="margin:0;">Founder Notes</h3>
+          <button class="btn btn-outline btn-sm" type="button" data-close-modal="founderModal">Close</button>
+        </div>
+        <div class="stack">
+          <p style="margin:0; color:var(--text-3); line-height:1.75;">
+            ThinkForge should feel large, serious, and startup-ready.
+          </p>
+          <p style="margin:0; color:var(--text-3); line-height:1.75;">
+            Users build. AI evaluates. The boss decides.
+          </p>
+          <p style="margin:0; color:var(--text-3); line-height:1.75;">
+            Strong projects can move from platform success into real startup paths.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="toastWrap"
+      style="
+        position:fixed;
+        right:16px;
+        bottom:16px;
+        display:grid;
+        gap:12px;
+        z-index:3000;
+      "
+    ></div>
+        <script>
+      const boardData = {
+        thinkers: [
+          { name: "Tengwen", role: "Founder thinker", score: 9980, note: "Founder mode active" },
+          { name: "User Alpha", role: "Reasoning specialist", score: 8740, note: "Logic board" },
+          { name: "User Beta", role: "Puzzle strategist", score: 8115, note: "Challenge board" },
+          { name: "User Gamma", role: "Independent thinker", score: 7860, note: "Climbing fast" }
+        ],
+        builders: [
+          { name: "Tengwen", role: "Main builder", score: 9320, note: "Core system builder" },
+          { name: "Builder One", role: "Prototype engineer", score: 7680, note: "Execution focus" },
+          { name: "Builder Two", role: "System creator", score: 7105, note: "Infrastructure" },
+          { name: "Builder Three", role: "Independent maker", score: 6940, note: "Shipping weekly" }
+        ],
+        ideas: [
+          { name: "Project Spark", role: "AI tutor platform", score: 9640, note: "High impact" },
+          { name: "ForgeKit", role: "Inventor device idea", score: 8410, note: "Hardware direction" },
+          { name: "ChipFlow", role: "Future chip concept", score: 7995, note: "Deep tech vision" },
+          { name: "Idea Nova", role: "Startup concept", score: 7720, note: "Rising concept" }
+        ],
+        startups: [
+          { name: "ThinkForge Core", role: "Founder startup track", score: 9910, note: "Primary company path" },
+          { name: "Atlas", role: "Prototype startup", score: 8580, note: "Strong launch potential" },
+          { name: "NovaGrid", role: "System startup", score: 8210, note: "Platform candidate" },
+          { name: "EdgeMint", role: "Device startup", score: 7890, note: "Hardware path" }
+        ]
+      };
+
+      const defaultBoardData = JSON.parse(JSON.stringify(boardData));
+      let currentBoard = "thinkers";
+      let userCounter = 1;
+
+      function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function initials(name) {
+        return name
+          .split(" ")
+          .map(part => part[0])
+          .join("")
+          .slice(0, 2)
+          .toUpperCase();
+      }
+
+      function showToast(title, message) {
+        const wrap = document.getElementById("toastWrap");
+        if (!wrap) return;
+
+        const toast = document.createElement("div");
+        toast.className = "card";
+        toast.style.minWidth = "260px";
+        toast.style.maxWidth = "340px";
+        toast.style.padding = "16px 18px";
+        toast.style.background = "rgba(10,18,32,0.95)";
+        toast.style.border = "1px solid rgba(255,255,255,0.12)";
+        toast.style.borderRadius = "16px";
+        toast.style.boxShadow = "0 20px 60px rgba(0,0,0,0.30)";
+        toast.style.transition = "opacity 0.2s ease, transform 0.2s ease";
+        toast.innerHTML = `
+          <strong style="display:block; margin-bottom:6px;">${title}</strong>
+          <p style="margin:0; color:#aebdd8; font-size:14px; line-height:1.55;">${message}</p>
+        `;
+
+        wrap.appendChild(toast);
+
+        setTimeout(() => {
+          toast.style.opacity = "0";
+          toast.style.transform = "translateY(8px)";
+        }, 2600);
+
+        setTimeout(() => {
+          toast.remove();
+        }, 3100);
+      }
+
+      function renderBoard() {
+        const list = document.getElementById("leaderboardList");
+        if (!list) return;
+
+        const items = [...boardData[currentBoard]].sort((a, b) => b.score - a.score);
+
+        list.innerHTML = items
+          .map((item, index) => {
+            return `
+              <div class="card">
+                <div style="display:flex; justify-content:space-between; gap:16px; align-items:center; flex-wrap:wrap;">
+                  <div style="display:flex; align-items:center; gap:14px; min-width:240px;">
+                    <div style="
+                      width:48px;
+                      height:48px;
+                      border-radius:14px;
+                      display:grid;
+                      place-items:center;
+                      font-weight:900;
+                      background:rgba(255,255,255,0.08);
+                      border:1px solid rgba(255,255,255,0.12);
+                    ">${index + 1}</div>
+
+                    <div style="
+                      width:44px;
+                      height:44px;
+                      border-radius:14px;
+                      display:grid;
+                      place-items:center;
+                      font-weight:900;
+                      background:linear-gradient(135deg, rgba(75,140,255,0.75), rgba(145,108,255,0.58));
+                      border:1px solid rgba(255,255,255,0.16);
+                    ">${initials(item.name)}</div>
+
+                    <div>
+                      <strong style="display:block; margin-bottom:4px;">${item.name}</strong>
+                      <div class="muted">${item.role}</div>
+                    </div>
+                  </div>
+
+                  <div class="muted" style="flex:1; min-width:180px;">
+                    ${item.note}
+                  </div>
+
+                  <div style="font-size:22px; font-weight:900; letter-spacing:-0.02em;">
+                    ${item.score.toLocaleString()}
+                  </div>
+                </div>
+              </div>
+            `;
+          })
+          .join("");
+      }
+
+      function setBoard(boardName) {
+        currentBoard = boardName;
+
+        document.querySelectorAll(".board-btn").forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.board === boardName);
+        });
+
+        renderBoard();
+      }
+
+      function addUser() {
+        const newNames = [
+          "User Delta",
+          "User Omega",
+          "User Vertex",
+          "User Zenith",
+          "User Pulse",
+          "User Aurora",
+          "User Helix",
+          "User Orbit"
+        ];
+
+        const boardRoles = {
+          thinkers: "Independent thinker",
+          builders: "Independent builder",
+          ideas: "Startup concept",
+          startups: "Startup candidate"
+        };
+
+        const boardNotes = {
+          thinkers: "New reasoning challenger",
+          builders: "New builder in the system",
+          ideas: "Fresh idea on the board",
+          startups: "Entered startup track"
+        };
+
+        const name = `${newNames[(userCounter - 1) % newNames.length]} ${userCounter}`;
+        const score = Math.floor(Math.random() * 1800) + 6400;
+
+        boardData[currentBoard].push({
+          name,
+          role: boardRoles[currentBoard],
+          score,
+          note: boardNotes[currentBoard]
+        });
+
+        userCounter++;
+        renderBoard();
+        showToast("User added", `${name} joined the ${currentBoard} board.`);
+      }
+
+      function simulateAI() {
+        boardData[currentBoard] = boardData[currentBoard].map(item => {
+          const change = Math.floor(Math.random() * 1100) - 220;
+          return {
+            ...item,
+            score: Math.max(1000, item.score + change)
+          };
+        });
+
+        renderBoard();
+        showToast("AI judging complete", `10 judges reviewed the ${currentBoard} board.`);
+      }
+
+      function promoteLeader() {
+        const sorted = [...boardData[currentBoard]].sort((a, b) => b.score - a.score);
+        if (!sorted.length) return;
+
+        const leader = sorted[0];
+        const target = boardData[currentBoard].find(item => item.name === leader.name);
+
+        if (target) {
+          target.score += 500;
+          target.note = "Founder spotlight candidate";
+        }
+
+        renderBoard();
+        showToast("Leader promoted", `${leader.name} moved closer to featured status.`);
+      }
+
+      function resetBoard() {
+        boardData.thinkers = JSON.parse(JSON.stringify(defaultBoardData.thinkers));
+        boardData.builders = JSON.parse(JSON.stringify(defaultBoardData.builders));
+        boardData.ideas = JSON.parse(JSON.stringify(defaultBoardData.ideas));
+        boardData.startups = JSON.parse(JSON.stringify(defaultBoardData.startups));
+        userCounter = 1;
+        renderBoard();
+        showToast("Boards reset", "All leaderboard values returned to default.");
+      }
+
+      function animateCounters() {
+        const counters = document.querySelectorAll("[data-count]");
+        counters.forEach(counter => {
+          const target = Number(counter.getAttribute("data-count"));
+          let value = 0;
+          const step = Math.max(1, Math.ceil(target / 50));
+
+          function update() {
+            value += step;
+            if (value > target) value = target;
+            counter.textContent = value.toLocaleString();
+            if (value < target) {
+              requestAnimationFrame(update);
+            }
+          }
+
+          update();
+        });
+      }
+
+      function setupTabs() {
+        document.querySelectorAll("section").forEach(section => {
+          const tabButtons = section.querySelectorAll("[data-tab]");
+          if (!tabButtons.length) return;
+
+          tabButtons.forEach(button => {
+            button.addEventListener("click", () => {
+              const key = button.dataset.tab;
+              tabButtons.forEach(btn => btn.classList.remove("active"));
+              button.classList.add("active");
+
+              section.querySelectorAll(".tab-panel").forEach(panel => {
+                panel.classList.remove("active");
+              });
+
+              const panel = section.querySelector(`#tab-${key}`);
+              if (panel) panel.classList.add("active");
+            });
+          });
+        });
+      }
+
+      function setupBoardTabs() {
+        document.querySelectorAll(".board-btn").forEach(button => {
+          button.addEventListener("click", () => {
+            setBoard(button.dataset.board);
+          });
+        });
+      }
+
+      function setupJoinForm() {
+        const form = document.getElementById("joinForm");
+        if (!form) return;
+
+        form.addEventListener("submit", event => {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value.trim() || "New User";
+          const role = document.getElementById("role").value;
+          const project = document.getElementById("project").value.trim();
+
+          showToast(
+            "Enrollment submitted",
+            `${name} joined ThinkForge as a ${role}${project ? ` for ${project}` : ""}.`
+          );
+
+          form.reset();
+        });
+      }
+
+      function setupModals() {
+        document.querySelectorAll("[data-open-modal]").forEach(button => {
+          button.addEventListener("click", () => {
+            const id = button.getAttribute("data-open-modal");
+            const modal = document.getElementById(id);
+            if (modal) {
+              modal.style.display = "flex";
+            }
+          });
+        });
+
+        document.querySelectorAll("[data-close-modal]").forEach(button => {
+          button.addEventListener("click", () => {
+            const id = button.getAttribute("data-close-modal");
+            const modal = document.getElementById(id);
+            if (modal) {
+              modal.style.display = "none";
+            }
+          });
+        });
+
+        ["demoModal", "founderModal"].forEach(id => {
+          const modal = document.getElementById(id);
+          if (!modal) return;
+
+          modal.addEventListener("click", event => {
+            if (event.target === modal) {
+              modal.style.display = "none";
+            }
+          });
+        });
+      }
+
+      function setupMobileMenu() {
+        const toggle = document.getElementById("mobileToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        if (!toggle || !navLinks) return;
+
+        toggle.addEventListener("click", () => {
+          navLinks.classList.toggle("open");
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("open");
+          });
+        });
+      }
+
+      function syncResponsiveLayouts() {
+        const joinShell = document.querySelector(".join-shell");
+        if (joinShell) {
+          joinShell.style.gridTemplateColumns =
+            window.innerWidth < 980 ? "1fr" : "1.05fr 0.95fr";
+        }
+      }
+
+      window.addEventListener("resize", syncResponsiveLayouts);
+
+      animateCounters();
+      setupTabs();
+      setupBoardTabs();
+      setupJoinForm();
+      setupModals();
+      setupMobileMenu();
+      syncResponsiveLayouts();
+      renderBoard();
+
+      showToast("ThinkForge ready", "Tengwen is the greatest.");
+    </script>
+  </main>
+</body>
+</html>
+    
